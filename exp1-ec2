@@ -1,0 +1,23 @@
+First instance commands:
+
+sudo yum update -y
+sudo yum install httpd -y
+sudo systemctl status httpd
+sudo systemctl start httpd
+sudo systemctl enable httpd
+
+
+Second instance commands:
+
+sudo apt-get update -y
+sudo apt-get install docker.io
+sudo docker pull nginx
+sudo docker run -d -p 80:80 --name my-nginx nginx
+open ipv4
+sudo docker exec -it my-nginx bash
+cd /usr/share/nginx/html
+ls
+apt update && apt install nano
+nano index.html
+change h1 tag
+refresh browser
