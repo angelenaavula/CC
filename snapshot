@@ -1,0 +1,84 @@
+SNAPSHOTS IN AWS ELASTIC BLOCK STORAGE :
+
+1.	Create an instance with a name, selecting Amazon Linux (AMI) and t2.micro as storage and CPU and keep all other settings the same default one.
+2.	Create a key-pair for your instance 
+3.	After successfully creating your instance, Go to EBS->volumes->Create Volume
+4.	Volume type is General purpose SSD(gp3), size is 35 GB and let other settings be same. Select the availability zone same as your instance.(us-east-1d)
+5.	After successfully creating volume,select the volume->Actions->Attach Volume
+6.	Select the instance we created, and device name as /dev/svdb and click on attach volume.
+7.	After successfully attaching volume, go to instances, select the instance and click on connect->SSH CLIENT and copy the command 
+8.	Open windows powershell and run as Administrator
+9.	Navigate to downloads and paste the command
+10.	Execute the following commands:
+•	sudo su
+•	lsblk -l
+•	fdisk -l
+•	lsblk -fs
+•	fdisk /dev/xvdb
+•	m (for help)
+•	n (new partition)
+•	p (partition)
+Click enter for default
+w (write changes)
+•	partprobe
+•	lsblk -fs
+•	mkfs.xfs /dev/xvdb1 (make file system)
+•	lsblk -fs to see directory created
+•	mkdir /mnt/csee (make directory to mount)
+•	ls
+•	mount /dev/xvdb1 /mnt/csee
+•	lsblk -fs
+•	lsblk -ls
+•	Go to your github maven repository and copy its https link
+•	cd /mnt/csee
+•	yum install update -y
+•	yum install -y git
+•	git clone <https link of repository>
+git clone https://github.com/angelenaavula/mavenrepo.git
+•	cd mavenrepo
+•	ls
+•	cd /
+•	ls
+TO PERSIST THE VOLUME:
+•	vi/etc/fstab
+•	i (insert mode)
+•	dev/xvdb1 /mnt/58f xfs deafults 0 0   (write this in a new line)
+•	esc
+•	:wq
+•	umount /mnt/csee
+•	cd /mnt/csee 
+•	ls (no files)
+•	mount -a (re mount)
+•	lsblk -fs
+•	cd /mnt/csee
+•	ls (you can see mavenrepo) 
+11.	Go to volumes->Select the volume->Actions->Create snapshot
+12.	Give description(optional) and click on create
+13.	Go to Elastic Block Store->Snapshots and you can see the snapshot
+14.	Select the snapshot ->Actions->Copy snapshot
+15.	Select regions as us-west-2 and click on copy
+16.	Now change the region to Oregon(us-west-2)
+17. Now go to snapshots you can see the copied snapshot
+17.	Select the snapshot->Actions->Create volume from snapshot
+Select availability zone as us-west-2a
+18.	Now go to volumes and you can see that the volume has been created
+19.	Now go to instances and launch an instance
+Name is snap-oregon OS->Amazon linux Instance type->t2.micro
+20.	Create key pair for the instance
+21.	Edit network settings 
+Select subnet -> us-west-2a
+Launch instance
+22.	Now go to volumes, select the volume->Actions->Attach Volume
+23.	Select the instance we just created and device name as /dev/svdb and click on attach volume
+24.	Now go to instance and connect to it
+25.	Execute the following commands:
+•	sudo su
+•	mkdir /mnt/585
+•	mount /dev/xvdb1 /mnt/585
+•	lsblk -fs 
+•	cd /mnt/585
+•	ls 
+You can see our maven repository 
+ 
+
+
