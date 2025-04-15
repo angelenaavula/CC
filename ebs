@@ -1,0 +1,18 @@
+sudo su
+lsblk
+fdisk -l
+lsblk -fs
+fdisk /dev/xvdb
+m n p enter enter enter w
+lsblk -fs
+mkfs.xfs /dev/xvdb1
+lsblk -fs
+mkdir /mnt/cse
+mount /dev/xvdb1 /mnt/cse
+cd /mnt/cse touch files ls
+lsblk lsblk -fs
+cd / unmount /mnt/cse
+sudo su
+vi /etc/fstab
+/dev/xvdb1 /mnt/cse xfs defaults 0 0
+mount -a
