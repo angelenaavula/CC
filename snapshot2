@@ -1,0 +1,14 @@
+till 11 same
+yum install update -y
+yum install -y git
+git clone
+cd and ls
+persist till 18
+
+
+sudo su
+lsblk -fs
+mkdir /mnt/585
+mount /dev/xvdb1 /mnt/585
+cd /mnt/585
+ls
