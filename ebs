@@ -16,3 +16,12 @@ sudo su
 vi /etc/fstab
 /dev/xvdb1 /mnt/cse xfs defaults 0 0
 mount -a
+
+
+
+•	sudo su
+•	lsblk -fs
+•	sudo mkdir -p /mnt/cse
+•	mount /dev/xvdb1 /mnt/cse
+•	ls /mnt/cse
+•	lsblk -fs
