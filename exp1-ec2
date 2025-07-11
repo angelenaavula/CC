@@ -1,3 +1,5 @@
+Edit the Security group to SSH anywhere, ALL TRAFFIC anywhere
+
 First instance commands:
 
 sudo yum update -y
