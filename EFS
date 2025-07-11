@@ -1,3 +1,16 @@
+Commands:
+sudo su
+mkdir efs
+yum install -y amazon-efs-utils 
+Paste nfs command on both the instances 
+cd efs
+git clone https://github.com/angelenaavula/mavenrepo.git 
+touch efs1.txt
+ls
+
+
+
+
 ELASTIC FILE SYSTEM IN AWS:
 1.	Go to Instances->Launch an Instance
 2.	Give a name and create key pair in putty private key(ppk) format
@@ -20,7 +33,7 @@ Give Hostname/IP address from instance SSH CLIENT connect
 •	yum install -y amazon-efs-utils 
 12.	Now go to aws console->Services->Elastic file system
 Click on Create file System.
-13.	Give anme as filesystem and keep others default and click on create
+13.	Give name as filesystem and keep others default and click on create
 14.	Now scroll down go to Network
 15.	Under network click on Manage
 16.	Add security group efs—nfs which we have created for both availability zones 1a and 1b
