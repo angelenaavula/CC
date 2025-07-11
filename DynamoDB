@@ -3,3 +3,13 @@ select * from "tablename";
 update tablename
 SET "COMPANY"='COGNIZANT'
 where "unique"='2';
+
+
+INSERT INTO "Users" VALUE {
+  'userId': '105',
+  'name': 'Eva',
+  'age': 29
+}
+
+
+DELETE FROM "Users" WHERE "userId" = '105'
