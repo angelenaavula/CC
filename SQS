@@ -17,4 +17,7 @@ export const handler = async (event, context) => {
 
   return "SQS message(s) processed";
 };
+
+
+Message to be sent:
 {"key1": "hello", "key2": "world", "key3": 123}
