@@ -1,0 +1,5 @@
+select * from "tablename";
+
+update tablename
+SET "COMPANY"='COGNIZANT'
+where "unique"='2';
