@@ -21,3 +21,46 @@ export const handler = async (event, context) => {
 
 Message to be sent:
 {"key1": "hello", "key2": "world", "key3": 123}
+
+
+
+Procedure:
+
+
+1.	Login to your aws account
+2.	Under services seach for Simple Queue Service
+3.	Click on Create Queue
+4.	Select Standard type
+5.	Keep the configuration same and click on Create
+6.	The queue has been successfully created
+7.	Select the queue you created and give message body
+8.	Click on Send message
+9.	The message has been sent and ready to be received.
+10.	 You can see the message details below
+11.	 Go to messages and you can see the message
+12.	Now Under services, search for Lambda
+13.	Click on create a function
+14.	Select Use a blueprint
+15.	 Give Blueprint name and Function name
+16.	 Execution role is Create a new role from AWS policy templates Give a name to the role
+17.	 Click on Create Function
+18.	The function was successfully created
+19.	Click on Add trigger and select the SQS
+20.	We now need to attach a policy to the role we created
+21.	 Go to IAM->Roles and select the role you created and click on Add permissions
+22.	Under Attach policy, search for AmazonSQSFullAccess and select it.
+23.	Click on Add permissions
+24.	Policy was successfully attached.
+25.	Now we can add our trigger, click on Add
+26.	We have successfully added our trigger
+27.	Now send message again
+28.	Go to CloudWath logs and see the message logs
+29.	Add the code to the function
+30.	We have successfully updated the function
+31.	Now send message again
+32.	In Cloud Watch, you can see the message along with the Timestamp.
+ 
+
+
+
+
